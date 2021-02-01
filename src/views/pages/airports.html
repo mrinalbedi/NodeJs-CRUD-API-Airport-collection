@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airport Department</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
+</head>
+<body>
+<header>
+    <h1 class="center">
+        <a href="/airports/create">Airports</a>
+    </h1>
+</header>
+<main>
+    <form class="form-create-airport" action="/airports/create" method="POST">
+        <label for="Airport_Code">Airport Code (required):</label>
+        <input class="form-control" type="text" id="Airport_Code" name="Airport_Code" required minLength="3" maxlength="3">
+
+        <label for="Phone_Number">Phone Number:(required)</label>
+        <input class="form-control" type="text" id="Phone_Number" name="Phone_Number" required maxlength="10" minLength="10">
+
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Create">
+    </form>
+</main>
+<footer class="center">
+    <p class="copyright">&copy; 2020 Airport Department Inc.</p>
+</footer>
+</body>
+</html>

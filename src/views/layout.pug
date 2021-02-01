@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+      title= title || "Airport Department"
+      block scripts
+
+  body
+      header
+        h1.center
+            a(href="#")= "Airport Department"
+
+      main
+        block content
+
+      footer.center
+        p.copyright &copy; #{(new Date()).getFullYear()} Airport Department Inc.

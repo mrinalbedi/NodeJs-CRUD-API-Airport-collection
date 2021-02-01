@@ -1,0 +1,36 @@
+body {
+    padding: 40px 10px;
+    background-color: #eee;
+}
+
+table {
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+figure figcaption {
+    font-size: 140%;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+/* css for registration form and errors*/
+.form-create-airport {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-create-airport input, select {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.form-create-airport .btn {
+    flex: 1 0 100%;
+}

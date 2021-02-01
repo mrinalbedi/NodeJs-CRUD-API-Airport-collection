@@ -1,0 +1,99 @@
+extends ../layout
+
+block scripts
+    link(rel='stylesheet', href='/static/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/static/css/styles.css')
+
+block content
+    figure.center
+        figcaption= 'All Airports'
+        table(class="table table-bordered")
+            tr
+                th Airport Code
+                th Phone Number
+            each a in airports
+                tr
+                    td= a.Airport_Code
+                    td= a.Phone_Number
+
+
+    figure.center
+        figcaption= 'Create Airports'
+        form(action="/airports/create" method="POST" class="form-create-airport")
+            label(for="Airport_Code") Airport Code (required):
+            input(
+                type="text"
+                id="Airport_Code"
+                name="Airport_Code"
+                class="form-control"
+                required
+                minLength="3"
+                maxlength="3"
+            )
+
+            label(for="Phone_Number") Phone number:(required)
+            input(
+                type="text"
+                id="Phone_Number"
+                name="Phone_Number"
+                class="form-control"
+                required
+                minLength="10"
+                maxlength="10"
+            )
+
+            input(
+                type="submit"
+                value="Create"
+                class="btn btn-lg btn-primary btn-block"
+            )
+
+    figure.center
+        figcaption= "Update Airport"
+        form(action="/airports/update" method="POST" class="form-create-airport")
+            label(for="airport_id_update") Airport to update:
+            select(id="airport_id_update" name="id" class="form-control")
+                each a in airports
+                    option(value=a._id)= a.Airport_Code
+
+            label(for="Airport_Code") Airport Code (required):
+            input(
+                type="text"
+                id="Airport_Code"
+                name="Airport_Code"
+                class="form-control"
+                required
+                minLength="3"
+                maxlength="3"
+            )
+
+            label(for="Phone_Number") Phone Number:
+            input(
+                type="text"
+                id="Phone_Number"
+                name="Phone_Number"
+                class="form-control"
+                required
+                minLength="10"
+                maxlength="10"
+            )
+
+            input(
+                type="submit"
+                value="Update"
+                class="btn btn-lg btn-primary btn-block"
+            )
+
+    figure.center
+        figcaption= "Delete Airport"
+        form(action="/airports/delete" method="POST" class="form-create-airport")
+            label(for="airports_id_delete") Airport to delete:
+            select(id="airports_id_delete" name="id" class="form-control")
+                each a in airports
+                    option(value=a._id)= a.Airport_Code
+
+            input(
+                type="submit"
+                value="Delete"
+                class="btn btn-lg btn-primary btn-block"
+            )

@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "f7750dfd-9934-412b-ad2b-e29a8417c7fc",
+		"name": "Airport Department",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add a new airport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Airport_Code\":\"IGI\",\n\t\"Phone_Number\":5197864598\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/airports/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"airports",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all airports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/airports/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"airports",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an existing airport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"5ea3465211ef956b48223384\",\n\t\"Airport_Code\":\"JFK\",\n\t\"Phone_Number\":\"4689821235\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/airports/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"airports",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an existing airport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"5ea3465211ef956b48223384\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/airports/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"airports",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
